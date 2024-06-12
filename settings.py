@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+from settings import DATABASES
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-&rr(l6n8seah^63ab2uhq5o8du#8hch-vy25*bljd2v#m)@4@!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -69,19 +71,27 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'message.wsgi.application'
+WSGI_APPLICATION = 'message.wsgi.app'
 
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'verceldb',
+            'USER': 'default',
+            'PASSWORD': '4zvRdnkw3aLO',
+            'HOST': 'ep-lively-river-a4h7v61e.us-east-1.aws.neon.tech',
+            'PORT' : '5432'
+        }}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
