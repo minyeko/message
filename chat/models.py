@@ -14,11 +14,9 @@ class ChatRoom(models.Model):
 
 
 class Message(models.Model):
-    text = models.TextField
+    name = models.CharField(max_length=100)
     chat_room = models.ForeignKey(ChatRoom, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)    
-    updated_at = models.DateTimeField(auto_now=True)    
     
     def __str__(self):
-        return self.text+ "_"+ str(self.user)
+        return self.name
