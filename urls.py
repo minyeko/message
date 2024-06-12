@@ -22,8 +22,11 @@ from rest_framework.routers import DefaultRouter
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
+<<<<<<< HEAD
     path('chat/', include('chat.urls')),
     
+=======
+>>>>>>> origin/main
 ]
 
 
