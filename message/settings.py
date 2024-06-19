@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'chat',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -87,8 +88,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'verceldb',
         'USER': 'default',
-        'PASSWORD': 'NjVTxWOF4et5',
-        'HOST': 'ep-ancient-bird-a7cfx35f-pooler.ap-southeast-2.aws.neon.tech',
+        'PASSWORD': '4zvRdnkw3aLO',
+        'HOST': 'ep-lively-river-a4h7v61e.us-east-1.aws.neon.tech',
         'PORT': '5432',
     }
 }
@@ -134,3 +135,19 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOW_ALL_ORIGINS = True # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+
+    'http://localhost:3000',
+
+] # If this is used, then not need to use `CORS_ALLOW_ALL_ORIGINS = True`
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+
+    'http://localhost:3000',
+
+]
